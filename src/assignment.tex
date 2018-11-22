@@ -272,6 +272,25 @@ B: bridge capacity ($Q_a$) is 500 vehicles/hour, other links have unkimited capa
  \end{center}  \end{figure} 
 \end{frame}
 
+\begin{frame}{Shortest paths}{Transit path choice}
+\begin{figure}\begin{center}
+\includegraphics[width=0.4\textwidth]{diachronic}
+ \end{center}  \end{figure} 
+\end{frame}
+
+\begin{frame}{Transit path choice}{Criteria}
+	\begin{itemize}
+		\item access walk time (to stop)
+		\item wait time (at stop)
+		\item ride time (or times)
+		\item ride/wait/walk comfort
+		\item transfer walk time (or times)
+		\item transfer wait time (or times)
+		\item egress walk time
+	\end{itemize}
+\end{frame}
+
+
 \begin{frame}{Shortest paths}{Transit AM peak}
 \begin{figure}\begin{center}
 \includegraphics[width=0.8\textwidth]{path_transit}
@@ -282,6 +301,16 @@ B: bridge capacity ($Q_a$) is 500 vehicles/hour, other links have unkimited capa
 \begin{figure}\begin{center}
 \includegraphics[width=0.8\textwidth]{path_transit2}
  \end{center}  \end{figure} 
+\end{frame}
+
+\begin{frame}{Shortest paths}{Heterogeneity}
+For the same $od$ pair and the same costs $c_a$ each individual (belongi ng to a given group) may have various choices:
+\begin{itemize}
+\item \textit{comforters} - low number of transfers, long ride and wait time acceptable
+\item \textit{in rush from place} - any trip with earliest arrival time.
+\item \textit{in rush to place} - any trip with latest departure time.
+\item \textit{walkers} - may walk to save time.
+\end{itemize}
 \end{frame}
 
 
