@@ -229,6 +229,13 @@ B: bridge capacity ($Q_a$) is 500 vehicles/hour, other links have unkimited capa
 \end{frame}
 
 \section{Path choices}
+\begin{frame}{Path/route choice}{distance}
+\begin{figure}\begin{center}
+\includegraphics[width=0.8\textwidth]{path_dist}
+ \end{center}  \end{figure} 
+\end{frame}
+
+
 \begin{frame}{Shortest paths}{distance}
 \begin{figure}\begin{center}
 \includegraphics[width=0.8\textwidth]{path_dist}
