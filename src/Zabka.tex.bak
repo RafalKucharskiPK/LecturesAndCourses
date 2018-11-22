@@ -1,0 +1,425 @@
+\documentclass{beamer}
+\usefonttheme[onlymath]{serif}
+\newcommand\bmale{\fontsize{6}{7.2}\selectfont}
+\newcommand\male{\fontsize{8}{7.2}\selectfont}
+\newcommand\normalne{\fontsize{10}{7.2}\selectfont}
+\newcommand\duze{\fontsize{12}{7.2}\selectfont}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+
+\graphicspath{{commons/}}
+
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  \usecolortheme{beaver}
+}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, rounded corners, align = center, minimum height=2.5cm, minimum width=4cm]
+\tikzstyle{line} = [draw, thin, ->, >=stealth]
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,    minimum height=2em]
+
+\usepackage{ulem}
+\usepackage{tabto}
+\usepackage[]{algorithm2e}
+\usepackage{bm}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+%\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+%\selectlanguage{polish}
+
+\title[Demand and Supply systems] % (optional, use only with long paper titles)
+{Introduction to Transportation Planning - Lectures}
+
+\subtitle
+{Demand and Supply systems}
+
+\author[dr in\.z. Rafa\l{} Kucharski] % (optional, use only with lots of authors)
+{dr in\.z. Rafa\l{} Kucharski\inst{1}}
+
+\institute[] % (optional, but mostly needed)
+{
+  \inst{1}%
+  Katedra System\'{o}w Transportowych\\
+  Politechnika Krakowska
+ }
+
+
+\date[KST, L-2, WIL, PK] % (optional, should be abbreviation of conference name)
+{Krak\'{o}w, 2017}
+
+\pgfdeclareimage[height=1cm]{university-logo}{commons/ZSK}
+ \logo{\pgfuseimage{university-logo}}
+
+\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Demand and supply}{introduction}
+
+\begin{block}{Demand} the desire to purchase, coupled with the power to do so. \\
+quantity of goods that buyers will take at a particular price. \\ service that people will or are able to buy at a certain price.
+\end{block}
+\begin{block}{Supply} amount of something that economic agents are willing to provide to the marketplace. 
+ quantity available for purchase at a particular price.
+\end{block}
+\end{frame}
+
+\begin{frame}{Demand and supply}{Transport System}
+Typically, a transport system is decomposed into:\\~\\
+ \alert{supply} \\ + \\  \alert{demand}
+\end{frame}
+
+\begin{frame}{Plan}
+We introduce supply \& demand system with a real-life example \\ $\rightarrow$ \\ we map this example on transport system.
+\end{frame}
+
+
+\begin{frame}{Case of feeding hungry students}
+Hungry students \alert{demand} to \alert{supply} their hunger at lunch time.
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{}
+\begin{center}
+  \begin{tikzpicture}[scale=.6, transform shape, node distance = 2cm, auto]
+    % Place nodes
+   
+    \node [block, label=above:\textbf{Supply}] (supply) {variety of companies \\offerring food}; \pause
+    \node [block, label=above:\textbf{Demand}, right=6cm of supply] (demand)
+     {hungry PK students\\  willing to fill their\\ stomachs in 20min break.};  \pause   
+      \draw[red,thick,dashed]  (6,-5) -- (6,3); 
+      \node[red] at (7,3.1) {delimiation};
+      \pause
+    \node[cloud, align=left, label=above:\textbf{Shops}, below= 1cm of supply] (shops) {Zabka  \\Carrefour  \\FreshMarket};   
+    \path [line] (supply) -- (shops); \pause
+    \node[cloud, align=left, label=above:\textbf{Restaurants}, left= 1cm of shops] (rest) {Docent  \\BobbyBurger  \\\L{}upinka \\ Galeria};  
+    \path [line] (supply) -- (rest); \pause
+    \node[cloud, align=left, label=above:\textbf{Self-sevice}, right= 1cm of shops] (self) {Go home \\ From home};  
+    \path [line] (supply) -- (self); \pause
+    \node[cloud, align=left, label=above:\textbf{Students}, below= 1cm of demand] (students) {each student makes a\\ subjective \textbf{decision} \\ i.e. selects best alternative. };  
+     \path [line] (demand) -- (students); \pause  
+     \path[blue, ->, dashed, thin] (students.south) edge[out=225, in=-45]     (shops.south);
+     \path[blue, ->, dashed, thin](students.south) edge[out=225, in=-45]    (self.south);
+     \path[blue, ->, dashed, thin] (students.south) edge[out=225, in=-45]     (rest.south);
+     \node[blue] at (4.5,-6) {decision $\rightarrow$ utility maximizing};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}
+\male
+\begin{block}{Decision process}
+Each student $s$ in a set of all students $\bm{S}$ selects makes a subjectively optimal decision,\\ i.e. selects alternative $a$ from set of available alternatives $\bm{A}$ \\ such that his \textbf{perceived} utility of this alternative $U_a^s$ is maximal in the set of all available alternatives:\\
+$\forall s \in \bm{S} s_a = \argmax_{a \in \bm{A}} U_a^s$
+\end{block}
+\begin{block}{Utility}
+Attractiveness of alternative (decision) for a given student. \\ Can be expressed as a function of  parameters $k_i$ of each alternative and weights $w_i$ assigned to them by a student:\\
+$U_a^s = \sum_{k_i \in K} w_i^s \cdot k_i$
+\end{block}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{Describing alternatives}
+\male
+We describe each alternative $a \in \bm{A}$ by assigning (estimating) a value to each significant criteria. We assume that criteria significant for students are: \begin{itemize}
+\item price, \item quality, \item variety (how many options I have), \item how long do I need to walk and how long do I need to wait. 
+\end{itemize} This list can be extended. Value of criteria shall be normalized, preferably to $[0,1]$ range, with 0 being worst and 1 being best.
+\begin{table}[]
+\centering
+\caption{\male Example of values assigned to criteria of selected alternatives:}
+\label{my-label}
+\begin{tabular}{l|l|l|l|l}
+alternative & \.{Z}abka & Galeria & Expo  \\ \hline
+price & 1 & 0.3 & 0.5 \\
+quality & 0.3 & 0.7 & 0.7 \\
+variety & 0.3 & 0.9 & 0.6 \\
+walk time & 0.3 & 0.1 & 0.9 \\
+wait time & 0.4 & 0.3 & 0.4  \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}
+\male
+Assigning values to criteria for alternatives is objective, but weighting those criteria is \alert{subjective}.\\ Some students may prefer quality over price, some can be a bit late some cannot, some care about quality, some do not.
+\begin{table}[]
+\centering
+\caption{\male Example of weights assigned to criteria by students:}
+\label{my-label}
+\begin{tabular}{l|l|l|l|l}
+$w_i^s$ &  $a$\footnote{\tiny Student does not care about price, quality matters, want to be able to choose from variety of options, does not like to walk long distance, doesn't want to be late.} & $b$\footnote{\tiny Student cares about price a lot, quality and variety does not matter, he can walk long distance and can be a bit late.} & random student\footnote{\tiny we are not sure what criteria he has, they are random and normal distributed with estimated mean and $\sigma$} & random rich student\footnote{\tiny criteria are random but we know price is less important than quality.}   \\ \hline
+price & 0.3 & 0.9 & $N(0.5,0.1)$ & $N(0.3,0.05)$  \\
+quality & 0.7 & 0.3 & $N(0.5,0.1)$  & $N(0.7,0.05)$  \\
+variety & 0.7 & 0.3 & $N(0.5,0.1)$ &  $N(0.7,0.0.5)$ \\
+walk time & 0.7 & 0.3 & $N(0.5,0.1)$ & $N(0.7,0.05)$  \\
+wait time & 0.8 & 0.1 & $N(0.5,0.1)$ & $N(0.8,0.1)$ \\ \hline
+\end{tabular}
+\end{table}
+Two important concepts:
+\begin{description}
+\item[heterogeneity] population of student in heterogeneous, i.e. some students are different from another.
+\item[randomness] weights assigned to criteria are random i.e. they can differ from day to day, and we cannot estimate them deterministically. They need to be treated as \alert{random variables}.
+\end{description}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{Estimating utility}
+\male
+Each students estimates his utility by evaluating the utility formula:
+\begin{equation*}
+U_a^s = \sum_{k_i \in K} w_i^s \cdot k_i
+\end{equation*}
+\begin{table}[]
+\centering
+\caption{\male Estimating ulity of 3 laternatives by student $a$:}
+\label{my-label}
+\begin{tabular}{l|lll|l}
+alternative & \.{Z}abka & Galeria & Expo & $w_i^s$  \\ \hline
+price & 1 & 0.3 & 0.5 & 0.3\\
+quality & 0.3 & 0.7 & 0.7 & 0.7 \\
+variety & 0.3 & 0.9 & 0.6 & 0.7 \\
+walk time & 0.3 & 0.1 & 0.9 & 0.7 \\
+wait time & 0.4 & 0.3 & 0.4 & 0.8 \\ \hline
+\textbf{utility} & 12.5 & 15.2 &	\textbf{24.1} \\ \hline
+\end{tabular}
+\end{table}
+Expo is the \textbf{alternative} with \textbf{maximal} utility for \textbf{this student} - he will supply his demand at Expo.
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{}
+\begin{center}
+  \begin{tikzpicture}[scale=.6, transform shape, node distance = 2cm, auto]
+    % Place nodes   
+    \node [block, label=above:\textbf{Supply}] (supply) {variety of companies \\offerring food}; 
+    \node [block, label=above:\textbf{Demand}, right=6cm of supply] (demand)
+     {hungry PK students\\  willing to fill their\\ stomachs in 20min break.};     
+      \draw[red,thick,dashed]  (6,-5) -- (6,3); 
+      \node[red] at (7,3.1) {delimiation};     
+    \node[cloud, align=left, label=above:\textbf{Shops}, below= 1cm of supply] (shops) {Zabka  \\Carrefour  \\FreshMarket};   
+    \path [line] (supply) -- (shops); 
+    \node[cloud, align=left, label=above:\textbf{Restaurants}, left= 1cm of shops] (rest) {Docent  \\BobbyBurger  \\\L{}upinka \\ Galeria};  
+    \path [line] (supply) -- (rest); 
+    \node[cloud, align=left, label=above:\textbf{Self-sevice}, right= 1cm of shops] (self) {Go home \\ From home};  
+    \path [line] (supply) -- (self); 
+    \node[cloud, align=left, label=above:\textbf{Students}, below= 1cm of demand] (students) {each student makes a\\ subjective \textbf{decision} \\ i.e. selects best alternative. };  
+     \path [line] (demand) -- (students);  
+     \path[blue, ->, dashed, thin] (students.south) edge[out=225, in=-45]     (shops.south);
+     \path[blue, ->, dashed, thin](students.south) edge[out=225, in=-45]    (self.south);
+     \path[blue, ->, dashed, thin] (students.south) edge[out=225, in=-45]     (rest.south);
+     \node[blue] at (4.5,-6) {\textbf{student decisions $\rightarrow$ utility maximizing}};
+     \pause
+     \path [line] (demand) -- (students);  
+     \path[red, ->] (shops.south) edge[in=240, out=-50]     (students.south);
+     \path[red, ->](self.south) edge[in=240, out=-50]    (students.south);
+     \path[red, ->] (rest.south) edge[in=240, out=-50]    (students.south);
+     \node[red] at (4.5,-7.4) {\textbf{supplier decision $\rightarrow$ attractive offer}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{Suppliers' decisions}
+\male
+\begin{block}{Supplier}
+Prepares an offer, i.e. \begin{itemize}
+\item defines the price, \item variety, \item improves the quality, etc. 
+\end{itemize} His objectives is to maximize number of students selecting his offer.
+Formally, each supplier proposes an offer which maximizes its perceives utility by students:
+\begin{equation*}
+\bm{k^a} = \argmax_{s \in \bm{S}} \left( U_a^s  = \sum_{k^a_i \in K} w_i^s \cdot k_i \right)
+\end{equation*}
+\end{block}
+Objectives for students and suppliers are similar:
+\begin{itemize}
+ \item  students wants to have the offer with the best utility, \item suppliers want to propose an offer which will be the best for maximal number of students. 
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{Total welfare}
+\begin{block}{Total welfare} We can express the total welfare of the system with:
+\begin{equation*}
+W=\sum_{s \in \bm{s}} {U_{a^{\ast}}^s}
+\end{equation*}
+, where $a^{\ast}$ is the alternative selected by student $s$, i.e. the one with highest utility.
+\end{block}
+\begin{block}{System improvement}
+Will the system improve when new restaurant \alert{"U Babci Maliny"} will open close to campus?
+\\ If some students will select this, i.e. it will have the highest utility. It will improve the total welfare $W$ and thus improve the system.
+\end{block}
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{Limited capacity}\male
+Utility of some criteria can be variable and change with the demand.
+\begin{block}{Waiting time}
+How long will I wait at \.{Z}abka until I get the food?
+\end{block}
+\begin{equation*}
+t_z=f(q_z)
+\end{equation*}
+\begin{description}
+\item[$t_z$] waiting time at \.{Z}abka. 
+\item[$q_z$] number of customers at \.{Z}abka.
+\end{description}
+
+\begin{center}
+ \begin{tikzpicture}
+% Draw the log-normal distribution curve
+\draw[blue,smooth,thick] plot[id=f1,domain=0.001:3,samples=50]
+({\x,{(\x/2)}});
+% Draw the x-axis
+\draw[->,black] (0,0) -- (3,0) node[anchor = south west] {$q_z$};
+% Draw the y-axis
+\draw[->,black] (0,0) -- (0,2) node[anchor = south east] {$t_z$};
+\end{tikzpicture}
+\end{center}
+waiting time linearly grows with number of students who has chosen \.{Z}abka.
+\end{frame}
+
+\begin{frame}{Case of feeding hungry students}{Limited capacity}\male
+\begin{enumerate}
+\item Number of students in \.{Z}abka: $q_z = f(U_z)$ is a function if its utility; \pause
+\item Utility of \.{Z}abka: $U_z = f(\dots, t_z)$ is a function of waiting time; \pause
+\item Waiting time in \.{Z}abka: $t_z = f(q_z)$ is a function of number of students selecting \.{Z}abka; \pause
+\item Number of students selecting \.{Z}abka: $q_z = f(U_z)$ is a function if its utility;
+\item ... \pause
+\end{enumerate}
+
+\begin{center}
+  \begin{tikzpicture}[scale=1, transform shape, node distance = 2cm, auto]
+    % Place nodes   
+    \node [block,  minimum height=1cm, minimum width=1cm] (q) {$q_z$};
+    \node [block, below=1cm of q, minimum height=1cm, minimum width=1cm] (t) {$t_z$};  
+    \path [line] (q) -- (t); 
+     \node [block, right=1cm of q, minimum height=1cm, minimum width=1cm] (U) {$U_z$};       
+    \path [line] (t) -| (U);    
+     \path [line] (U) -- (q);  
+     \pause
+     \node[red] at (1,-0.8) {\tiny fixed point problem}; 
+     \node at (1,-1.1) {$q_z=f(q_z)$};     
+   
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Fixed-point problem\footnote{By Stefan Banach - Krakow/Lwow world famous mathematician}}{}
+\begin{equation*}
+q_z^n=f(q_z^{n-1})
+\end{equation*}
+\begin{enumerate}
+\item how many students will select \.{Z}abka today (day $n$)? 
+\item it depends on how satisfied they were from their decision yesterday (day $n-1$).
+\item if number of students who selected \.{Z}abka today equals the number of students who selected \.{Z}abka yesterday - we are in the fixed-point - the system \textbf{stabilized/equilibrated}.
+\item it also means that waiting time at \.{Z}abka is exactly, like it was yesterday, and exactly like it was expected by the students who selected \.{Z}abka.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{End of the case-study}
+\end{frame}
+
+\begin{frame}{Supply and demand in transportation}
+\begin{center}
+  \begin{tikzpicture}[scale=.6, transform shape, node distance = 2cm, auto]
+    % Place nodes   
+    \node [block, label=above:\textbf{Supply}] (supply) {road network \\ bike roads \\ public transport }; 
+    \node [block, label=above:\textbf{Demand}, right=6cm of supply] (demand)
+     {travellers at their \\ origins willing to travel \\ to their destinations \\ in the shortest time};     
+      \draw[red,thick,dashed]  (6,-5) -- (6,3); 
+      \node[red] at (7,3.1) {delimiation};     
+    \node[cloud, align=left, label=above:\textbf{Transit}, below= 1cm of supply] (shops) {Bus  \\Tram \\Metro};   
+    \path [line] (supply) -- (shops); 
+    \node[cloud, align=left, label=above:\textbf{Car}, left= 1cm of shops] (rest) {Own Car  \\With a friend \\Taxi};  
+    \path [line] (supply) -- (rest); 
+    \node[cloud, align=left, label=above:\textbf{Other}, right= 1cm of shops] (self) {Bike \\ Walk};  
+    \path [line] (supply) -- (self); 
+    \node[cloud, align=left, label=above:\textbf{Travellers}, below= 1cm of demand] (students) {each traveller makes a\\ subjective \textbf{decision} \\ i.e. selects best alternative. };  
+     \path [line] (demand) -- (students);  
+     \path[blue, ->, dashed, thin] (students.south) edge[out=225, in=-45]     (shops.south);
+     \path[blue, ->, dashed, thin](students.south) edge[out=225, in=-45]    (self.south);
+     \path[blue, ->, dashed, thin] (students.south) edge[out=225, in=-45]     (rest.south);
+     \node[blue] at (4.5,-6) {\textbf{traveller decisions $\rightarrow$ utility maximizing}};
+     \path [line] (demand) -- (students);  
+     \path[red, ->] (shops.south) edge[in=240, out=-50]     (students.south);
+     \path[red, ->](self.south) edge[in=240, out=-50]    (students.south);
+     \path[red, ->] (rest.south) edge[in=240, out=-50]    (students.south);
+     \node[red] at (4.5,-7.4) {\textbf{transport decision $\rightarrow$ attractive offer}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Fixed-point problem in transportation}{Limited-capacity}
+Travel time is variable and changes with the demand.
+\begin{block}{Waiting time}
+How long will I travel across the Aleje?
+\end{block}
+\begin{equation*}
+t_a=f(q_a)
+\end{equation*}
+\begin{center}
+ \begin{tikzpicture}
+% Draw the log-normal distribution curve
+\draw[blue,smooth,thick] plot[id=f1,domain=0.001:3,samples=50]
+({\x,{((1+(\x/3)^2)}});
+% Draw the x-axis
+\draw[->,black] (0,0) -- (3,0) node[anchor = south west] {$q_a$};
+% Draw the y-axis
+\draw[->,black] (0,0) -- (0,2) node[anchor = south east] {$t_a$};
+\end{tikzpicture}
+\end{center}
+Travel time \textbf{non-linearly} grows with number of cars at Aleje.
+\end{frame}
+
+
+\begin{frame}{Fixed-point problem in transportation}{}
+\begin{equation*}
+q_z^n=f(q_z^{n-1})
+\end{equation*}
+\begin{enumerate}
+\item how many drivers will select Aleje today (day $n$)? 
+\item it depends on how satisfied they were from their decision yesterday (day $n-1$).
+\item if number of drivers who selected Aleje today equals the number of drivers who selected Aleje yesterday - we are in the fixed-point - the system \textbf{stabilized/equilibrated}.
+\item it also means that travel time at Aleje is exaclty, like it was yesterday, and exactly like it was expected by the drivers who selected Aleje.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Summary}{Transportation as a Demand-Supply system}
+\begin{itemize}
+\item Demand is supplied. 
+\item Actors of the system maximize their subjective utility, select rationally.
+\item Suppliers try to offer something that will be chosen by maximal number of people.
+\item If the outcomes of our decisions are function of our decisions we are in a fixed-point problem. Solved iteratively.
+\item User Equilibrium is found when decisions do not vary from day-to-day, i.e. experience equals expectation.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}{Transportation as a Demand-Supply system}
+In transportation:
+\begin{itemize}
+\item Demand is the need to travel from origin to destination $q_{od}$. 
+\item Supply is the transport system: road, public transport, walk, bike.
+\item Decisions are e.g. what mode of transport do I select, when do I go, what route do I choose?
+\item Travel time at roads and congestion in public transport are functions of decisions made by others in the system.
+\item User Equilibrium is found when no driver can change route to improve his/her travel time.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}{Thank you for attention}
+Rafal Kucharski, rkucharski(at)pk.edu.pl
+\end{frame}
+
+\end{document}
+
+
+

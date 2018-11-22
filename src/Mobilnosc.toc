@@ -1,0 +1,8 @@
+\select@language {polish}
+\select@language {polish}
+\beamer@sectionintoc {1}{Doba - aktywnosci i podroze}{20}{0}{1}
+\beamer@sectionintoc {2}{Model 4 stadiowy}{25}{0}{2}
+\beamer@sectionintoc {3}{Generacja Ruchu}{29}{0}{3}
+\beamer@sectionintoc {4}{Wyb\IeC {\'o}r celu podr\IeC {\'o}\IeC {\.z}y}{32}{0}{4}
+\beamer@sectionintoc {5}{Popyt na nowej inwestycji}{40}{0}{5}
+\beamer@sectionintoc {6}{Wyb\IeC {\'o}r trasy}{46}{0}{6}
