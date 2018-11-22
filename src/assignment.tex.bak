@@ -229,10 +229,28 @@ B: bridge capacity ($Q_a$) is 500 vehicles/hour, other links have unkimited capa
 \end{frame}
 
 \section{Path choices}
-\begin{frame}{Path/route choice}{distance}
-\begin{figure}\begin{center}
-\includegraphics[width=0.8\textwidth]{path_dist}
- \end{center}  \end{figure} 
+\begin{frame}{Path/route choice}
+	\begin{block}{Rationale}
+		I want (demand) to travel from origin $o$ to destination $d$ on a directed network graph $G(N,A)$ where both arcs $a \in A$ and nodes $n \in N$ have some associated travel costs $c_a$, $c_n$.
+	\end{block} 
+	Cost is:
+	\begin{itemize}
+		\item user-perceived (subjective)
+		\item typically related with time $c_a \propto t_a$ or hugely driven by time
+		\item may include other variables, like: length, comfort, toll (price), user-bias
+		\item are often demand related $c_a = f(q_a)$ which constitutes a fixed point. 
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Path/route choice}
+	\begin{block}{Route choice problem}
+	\begin{itemize}
+		\item Identify feasible paths $K_{od}$ from $o$ to $d$. Compuationally hard, number of alternatives explode.
+		\item Define probabilities of selecting a path based on given criteria.
+		\item Select the most probable path (deterministic, all-or-nothing)
+		\item or determine path probabilities (probablistic, stochastic, multi-path).
+	\end{itemize}
+	\end{block}
 \end{frame}
 
 
