@@ -308,7 +308,8 @@ For the same $od$ pair and the same costs $c_a$ each individual (belongi ng to a
 \begin{itemize}
 \item \textit{comforters} - low number of transfers, long ride and wait time acceptable
 \item \textit{in rush from place} - any trip with earliest arrival time.
-\item \textit{in rush from place} - any trip with latest departure time.
+\item \textit{in rush to place} - any trip with latest departure time.
+\item \textit{walkers} - may walk to save time.
 \end{itemize}
 \end{frame}
 
