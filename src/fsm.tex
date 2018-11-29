@@ -1,0 +1,240 @@
+\documentclass[8pt]{beamer}
+\usefonttheme[onlymath]{serif}
+\newcommand\bmale{\fontsize{6}{7.2}\selectfont}
+\newcommand\male{\fontsize{8}{7.2}\selectfont}
+\newcommand\normalne{\fontsize{10}{7.2}\selectfont}
+\newcommand\duze{\fontsize{12}{7.2}\selectfont}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\graphicspath{{commons/}}
+
+ \AtBeginSection[]{
+   \begin{frame}
+   \vfill
+ \centering
+   \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+     \usebeamerfont{title}\insertsectionhead\par%
+   \end{beamercolorbox}
+   \vfill
+   \end{frame}
+ }
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  \usecolortheme{beaver}
+}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,positioning}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, rounded corners, align = center, minimum height=2.5cm, minimum width=4cm]
+\tikzstyle{line} = [draw, thin, ->, >=stealth]
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,    minimum height=2em]
+
+\usepackage{pgfplots}
+\usepackage{ulem}
+\usepackage{tabto}
+\usepackage[]{algorithm2e}
+\usepackage{bm}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\selectlanguage{polish}
+
+\title[Kraków, 2018] % (optional, use only with long paper titles)
+{Introduction to Transportation Planning}
+
+\subtitle
+{Demand Model, Four Step Demand Model}
+
+\author[dr in\.z. Rafa\l{} Kucharski] % (optional, use only with lots of authors)
+{dr in\.z. Rafa\l{} Kucharski\inst{1}}
+
+\institute[] % (optional, but mostly needed)
+{
+  \inst{1}%
+  Katedra System\'{o}w Transportowych\\
+  Politechnika Krakowska
+ }
+
+
+\date[KST, L-2, WIL, PK] % (optional, should be abbreviation of conference name)
+{Krak\'{o}w, 2018}
+
+\pgfdeclareimage[height=1cm]{university-logo}{commons/ZSK}
+ \logo{\pgfuseimage{university-logo}}
+
+\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Demand Model}
+\begin{frame}{Demand Model}{}
+	\begin{block}{Demand}
+		Number of trips $q$ that travellers \alert{demand} to make between origin $o$ and destination $d$.
+		\begin{equation}
+		q_{od}
+		\end{equation}
+	\end{block}
+	
+	\begin{block}{Demand model}
+		Estimate the demand
+		\begin{equation}
+		q_{od} = f(o,d,X_o,X_d,c_{od},\dots)
+		\end{equation}
+		to determine expected/mean/average demand expressed as a function of known variables $X_o$ and parameters $\bm{\beta}$ estimated to match the observed demand.
+	\end{block}
+\end{frame}
+
+\section{Travel survey}
+\begin{frame}{Travel survey}{Demand model input}
+	\begin{block}{Personal Travel diary}
+		Chain of trips executed by an individual during the day
+	\end{block}
+	
+	\begin{enumerate}
+	\item activity 1: type, location, start time
+	\item trip 1: type, location, start time, mode, route
+	\item activity 2: type, location, start time
+	\item trip 2: type, location, start time, mode, route
+	\item activity 3: type, location, start time
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Travel survey}{reason}
+	\begin{block}{Survey}
+		We cannot know diaries of all individuals (cost, time, organization, privacy, ...). \\ 
+		We need to sample the population.	
+	\end{block}
+	
+	\begin{block}{Sampling and extrapolation}
+		The sample is representative if the key statistics of the population are the same as for the sample.	
+	\end{block}	
+\end{frame}
+
+\begin{frame}{Travel survey}{sample sizes}
+	\begin{block}{Małopolska 2013}
+		12 000 individuals	
+	\end{block}
+	\begin{block}{Kraków 2014}
+		18 000 individuals	
+	\end{block}
+	
+	\begin{block}{Warszawa 2016}
+		24 000 individuals	
+	\end{block}
+	
+	\begin{block}{Wrocław 2018}
+		300 000 individuals	- GSM traces
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}{Travel survey}{methods}
+	\begin{block}{Paper}
+		fill the form
+	\end{block}
+	
+	\begin{block}{Tablet}
+		fill the form online
+	\end{block}
+	
+	\begin{block}{Census}
+		officially fill the form
+	\end{block}
+	
+	\begin{block}{App based}
+		install the tracing (GPS) App on your cell phone
+	\end{block}
+	
+	\begin{block}{BigData}
+		record anonimized traces - GSM, bluetooth, instargam, etc.
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}{Travel survey}{results}
+	\begin{block}{Survey results}
+		\begin{enumerate}
+		\item average number of trips (per purpose, per person group, per zone)
+		\item temporal distribution of trips
+		\item trip distance profile/ destination choices
+		\item mode shares/mode choices
+		\item route choices
+		\item vehicle occupancy
+		\end{enumerate}	
+	\end{block}	
+\end{frame}
+
+\begin{frame}{Four step demand model}{FSM}
+	\begin{block}{Survey results}
+		Reproduce (model) the behaviour read (understood) from survey.
+		\\
+		Model shall be calibrated, i.e. modelled values shall match the observed (emprical ones)
+		
+	\end{block}	
+\end{frame}
+
+\section{Four step demand model}
+\begin{frame}{Four step demand model}{Wprowadzenie}
+\begin{itemize}
+\item analitical
+\item built on and to reproduce the survey
+\item interpretable
+\item algorithmic 
+\item probabilistic (expected demand)
+\item trip based (not chains)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Four step model}{FSM}
+	\begin{block}{Four step demand model}
+		\begin{enumerate}
+		\item Trip Generation
+		\item * Time Choice
+		\item Destination Choice
+		\item Mode Choice
+		\item Path/Route Choice
+		\end{enumerate}	
+	\end{block}	
+\end{frame}
+
+
+\begin{frame}{Four step model}{FSM}
+\begin{table}[]
+\begin{tabular}{l|c|c|c|c}
+1 & \textbf{do?/how often?} &  zone production /attraction & $q_o$, $q_d$ & \textbf{Trip Generation}\\ \hline 
+2 & \textbf{where?} &  od matrix & $q_{od}$ & \textbf{Destination Choice}\\ \hline 
+3 & \textbf{how?} &  mode shares  & $p_{od}$ & \textbf{Mode Choice}\\ \hline 
+4 & \textbf{which way?} &  network loads & $q_a$ & \textbf{Route/Path Choice}\\ \hline 
+\end{tabular}
+\end{table}
+\end{frame}
+
+
+
+
+\begin{frame}{Summary}{Thanks for attention}
+Rafal Kucharski, rkucharski(at)pk.edu.pl
+\end{frame}
+
+\end{document}
+
+
+
