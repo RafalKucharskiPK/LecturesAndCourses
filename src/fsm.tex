@@ -227,8 +227,345 @@
 \end{table}
 \end{frame}
 
+\section{Trip Generation}
+\begin{frame}{Trip Generation}
+presented on the blackboard at the lecture
+\end{frame}
+
+\section{Trip Distribution - Gravity}
+\begin{frame}{Destination choice}
+\begin{block}{Problem}
+We know where trips originate (production) and end (attraction) \\
+We \alert{do not know} where the originating trips finish
+\end{block}
+\begin{block}{Choice}
+Traveller:
+\begin{itemize}
+ \item located in a given place (origin) $o$
+ \item has travel demand to be supplied at some destination  
+ \item selects (chooses) a place where he supplies his demand
+ \end{itemize} 
+ \end{block}
+\end{frame}
+
+\begin{frame}{Destination choice}{Example 1}
+Four travel assignment zones (1-4) generate total of 1000 trips\\
+that may be supplied at two destinations: 5 (closer) and 6 (further).
+\begin{center}
+\begin{minipage}{0.65\textwidth}
+        
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=10}]
+
+       \node [darkstyle]  (1) at (4,1) {3}; 
+       \node [darkstyle]  (2) at (6,3) {2};
+       \node [darkstyle]  (3) at (4,3) {1};
+       \node [darkstyle]  (4) at (6,1) {4};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]  (5) at (5,2) {5};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]   (6) at (0,2) {6};
+\end{tikzpicture}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+     \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d$} & P & A \\ 
+\hline 
+1 & 100 & -  \\ 
+\hline 
+2 & 200 & -  \\ 
+\hline 
+3 & 300 & -  \\ 
+\hline 
+4 & 400 & -    \\ 
+\hline 
+5 & - & 200  \\ 
+\hline 
+6 & - & 800  \\ 
+\hline
+\end{tabular}
+\end{center}   
+    \end{minipage}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Destination choice}{Example 1}
+\begin{center}
+\begin{minipage}{0.65\textwidth}
+        
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=10}]
+
+       \node [darkstyle]  (1) at (4,1) {3}; 
+       \node [darkstyle]  (2) at (6,3) {2};
+       \node [darkstyle]  (3) at (4,3) {1};
+       \node [darkstyle]  (4) at (6,1) {4};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]  (5) at (5,2) {5};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]   (6) at (0,2) {6};
+\end{tikzpicture}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+     \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d$} & P & A \\ 
+\hline 
+1 & 100 & -  \\ 
+\hline 
+2 & 200 & -  \\ 
+\hline 
+3 & 300 & -  \\ 
+\hline 
+4 & 400 & -    \\ 
+\hline 
+5 & - & 200  \\ 
+\hline 
+6 & - & 800  \\ 
+\hline
+\end{tabular}
+\end{center}   
+    \end{minipage}
+\end{center}
+\begin{block}{Non systematic (non-obligatory) trips with high trip cost impedance} 
+e.g. shopping to the closest supermarket (Biedronka)
+\end{block}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d,$}& 5 & 6 \\ 
+\hline 
+1 & 90 & 10  \\ 
+\hline 
+2 & 200 & 0 \\ 
+\hline 
+3 & 270 & 30 \\ 
+\hline 
+4 & 400 & 0 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Destination choice}{Example 2}
+\begin{center}
+\begin{minipage}{0.65\textwidth}
+        
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=10}]
+
+       \node [darkstyle]  (1) at (4,1) {3}; 
+       \node [darkstyle]  (2) at (6,3) {2};
+       \node [darkstyle]  (3) at (4,3) {1};
+       \node [darkstyle]  (4) at (6,1) {4};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]  (5) at (5,2) {5};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]   (6) at (0,2) {6};
+\end{tikzpicture}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+     \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d$} & P & A \\ 
+\hline 
+1 & 100 & -  \\ 
+\hline 
+2 & 200 & -  \\ 
+\hline 
+3 & 300 & -  \\ 
+\hline 
+4 & 400 & -    \\ 
+\hline 
+5 & - & 200  \\ 
+\hline 
+6 & - & 800  \\ 
+\hline
+\end{tabular}
+\end{center}   
+    \end{minipage}
+\end{center}
+\begin{block}{Non systematic (non-obligatory) trips with highly varying attractivenses} 
+e.g. to a restaurant of various attractiveness (reflected in attraction)
+\end{block}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d,$}& 5 & 6 \\ 
+\hline 
+1 & 20 & 80  \\ 
+\hline 
+2 & 40 & 160 \\ 
+\hline 
+3 & 60 & 240 \\ 
+\hline 
+4 & 80 & 320 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{frame}
 
 
+
+
+\begin{frame}{Destination choice}{Example 3}
+\begin{center}
+\begin{minipage}{0.65\textwidth}
+        
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=10}]
+
+       \node [darkstyle]  (1) at (4,1) {3}; 
+       \node [darkstyle]  (2) at (6,3) {2};
+       \node [darkstyle]  (3) at (4,3) {1};
+       \node [darkstyle]  (4) at (6,1) {4};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]  (5) at (5,2) {5};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]   (6) at (0,2) {6};
+\end{tikzpicture}
+    \end{minipage}\hfill
+    \begin{minipage}{0.25\textwidth}
+     \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d$} & P & A \\ 
+\hline 
+1 & 100 & -  \\ 
+\hline 
+2 & 200 & -  \\ 
+\hline 
+3 & 300 & -  \\ 
+\hline 
+4 & 400 & -    \\ 
+\hline 
+5 & - & 200  \\ 
+\hline 
+6 & - & 800  \\ 
+\hline
+\end{tabular}
+\end{center}   
+    \end{minipage}
+\end{center}
+\begin{block}{Systematic (obligatory) trips with limited attraction capacity} 
+e.g. Home-Work with a fixed number of work-places at destination
+\end{block}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d,$}& 5 & 6 \\ 
+\hline 
+1 & 20 & 80  \\ 
+\hline 
+2 & 40 & 160 \\ 
+\hline 
+3 & 60 & 240 \\ 
+\hline 
+4 & 80 & 320 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Destination choice}{Example 3}
+\begin{center}
+\begin{minipage}{0.65\textwidth}
+        
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=10}]
+
+       \node [darkstyle]  (1) at (4,1) {3}; 
+       \node [darkstyle]  (2) at (6,3) {2};
+       \node [darkstyle]  (3) at (4,3) {1};
+       \node [darkstyle]  (4) at (6,1) {4};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]  (5) at (5,2) {5};
+       \node [style={rectangle,draw,fill=gray!10,minimum size=20}]   (6) at (0,2) {6};
+\end{tikzpicture}
+    \end{minipage}\hfill
+    \begin{minipage}{0.35\textwidth}
+     \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d$} & P & A \\ 
+\hline 
+1 & 100 & -  \\ 
+\hline 
+2 & 200 & -  \\ 
+\hline 
+3 & 300 & -  \\ 
+\hline 
+4 & 400 & -    \\ 
+\hline 
+5 & - & 200 \alert{-> 800}  \\ 
+\hline 
+6 & - & 800 \alert{-> 200} \\ 
+\hline
+\end{tabular}
+\end{center}   
+    \end{minipage}
+\end{center}
+\begin{block}{Systematic (obligatory) trips where supply eventually matched the demand} 
+e.g. preschool locations moving closer to children
+\end{block}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+{$o,d,$}& 5 & 6 \\ 
+\hline 
+1 & 80 & 20  \\ 
+\hline 
+2 & 1600 & 40 \\ 
+\hline 
+3 & 240 & 60 \\ 
+\hline 
+4 & 320 & 80 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\end{frame}
+
+\begin{frame}{Actual trip distribtuion structure}{Reflected in the GSM traces}
+\begin{figure}
+\begin{center}
+\includegraphics[height=7cm]{8}
+ \end{center}
+ \end{figure} 
+ \end{frame}
+ 
+\begin{frame}{Gravity model}{Formalization}
+\begin{block}{Proportional model}
+If we assume that the only factor in trip choices is attractivity, we get:
+\begin{equation*}
+Q_{od}=f(P_o,A_d) = \frac{P_o}{\sum_{o \in Z} P} A_d = P_o \frac{A_d}{\sum_{d \in Z} A}
+\end{equation*}
+\\
+we may read it as:\\
+1. distribute production proportionally to attraction
+\begin{equation*}
+Q_{od}=P_o \frac{A_d}{\sum_{d \in Z} A}
+\end{equation*}
+2. distribute attraction proportionally to production
+\begin{equation*}
+Q_{od}=A_d \frac{P_o}{\sum_{o \in Z} P}
+\end{equation*}
+\end{block}
+one of production/attraction needs to be in absolute values (trips) second one may be just proportionality factor
+\end{frame}
+
+\begin{frame}{Gravity model}{Formalization}
+Problem with proportional model: \alert{no distance included}
+\begin{block}{Gravity model}
+If in proportional model we include distance function (cost $c_od$), we get:
+\begin{equation*}
+Q_{od}=f(P_o,A_d, c_{od}) = f(c_od) \frac{P_o}{\sum_{o \in Z} P} A_d 
+\end{equation*}
+\end{block}
+\end{frame}
+
+with two specific functions to apply:
+
+\begin{frame}{Gravity model}{Cost functions}
+\begin{tikzpicture}[declare function={
+f(\x,\y)=(\y/\x)* (1/sqrt(2*pi*1))*exp(-(ln(\x/\y)-0)^2/(2*1);
+{]
+      \draw[->] (0,0) -- (16,0) node[right] {$x$};
+      \draw[->] (0,0) -- (0,4) node[above] {$y$};
+      \draw[scale=0.5,domain=0:16,smooth,variable=\x,blue] plot ({\x},{10*exp(-\x*0.2)});
+      \draw[color=green!60!black,very thick,domain=0.01:200,samples=101]{f(x,100)};
+          \end{tikzpicture}
+\end{frame}
 
 \begin{frame}{Summary}{Thanks for attention}
 Rafal Kucharski, rkucharski(at)pk.edu.pl

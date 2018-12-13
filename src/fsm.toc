@@ -3,3 +3,5 @@
 \beamer@sectionintoc {1}{Demand Model}{2}{0}{1}
 \beamer@sectionintoc {2}{Travel survey}{4}{0}{2}
 \beamer@sectionintoc {3}{Four step demand model}{11}{0}{3}
+\beamer@sectionintoc {4}{Trip Generation}{15}{0}{4}
+\beamer@sectionintoc {5}{Trip Distribution - Gravity}{17}{0}{5}
