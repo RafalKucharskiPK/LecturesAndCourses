@@ -1,0 +1,5 @@
+\select@language {polish}
+\select@language {polish}
+\beamer@sectionintoc {1}{Wyk\IeC {\l }ad 1}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Ruch i jego reprezentacja}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Podsumowanie}{26}{0}{1}
