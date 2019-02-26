@@ -69,13 +69,14 @@
 \institute[] % (optional, but mostly needed)
 {
   \inst{1}%
-  Katedra Systemów Transportowych\\
-  Politechnika Krakowska  
+  Zakład Systemów Komunikacyjnych\\
+  Politechnika Krakowska
+  \and
  }
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date[KST, L-2, WIL, PK] % (optional, should be abbreviation of conference name)
+\date[ZSK, L-2, WIL, PK] % (optional, should be abbreviation of conference name)
 {Kraków, 2017}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
@@ -135,13 +136,76 @@
 % - If you omit details that are vital to the proof/implementation,
 %   just say so once. Everybody will be happy with that.
 
-\begin{frame}{Wstęp}
-Cel wykładu:
-\\
-sposoby szacowania czasu przejazdu pojazdów przez obciążoną sieć drogową o ograniczonej przepustowości.
-\\
-rzeczywiste zjawiska i ich modele.
+\section{Wykład 1}
+
+%\subsection{Sprawy organizacyjne}
+%
+%\begin{frame}{Sprawy formalne}
+% 
+%  \begin{itemize}
+%  \item cztery wykłady
+%  \item esencja
+%  \item obecność wysoce wskazana
+%  \item treść wykładów wymagana do zaliczenia 
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}{Terminy wykładów}
+% sala 404 WIL \\  godzina 16:15 
+%   \begin{itemize}
+%  \item 09.05.2017
+%  \item 23.05.2017
+%  \item 30.05.2017
+%  \item \sout{06.06.2017}
+%  \item 13.06.2017
+%  \end{itemize}
+%  
+%\end{frame}
+
+
+\begin{frame}{Zakres wykładów}
+
+
+\begin{itemize}
+\item opis ruchu drogowego, miary ruchu i ich pomiary
+\item dynamika ruchu
+\item mikro, a makro skala
+\item od opisu ogólnego do szczegółowego:
+\begin{itemize}
+\item markoskopowa funkcja oporu $\longrightarrow$ diagram fundamentalny \\ $\longrightarrow$ wykres: czas-przestrzeń-prędkość $\longrightarrow$ mikrosymulacja
+\end{itemize}
+\item modele mikroskopowe: 
+\begin{itemize}
+\item modele podążania za liderem:
+\begin{itemize}
+\item modele analityczne (optymalne), 
+\item modele rzeczywiste (\textit{np. Intelligent Driver Model, Wiedemann’a}) 
+\end{itemize}
+\item modele dyskretne (zmiana pasa, decyzja o włączeniu się)
+\end{itemize}
+\item losowość (niedeterministyczność) w podejściu symulacyjnym
+\item mikrosymulacja transportu zbiorowego
+ \end{itemize}
 \end{frame}
+
+\begin{frame}{Literatura}
+
+\begin{itemize}
+\bmale
+\item Treiber, M.,  Kesting, A. (2013). Traffic flow dynamics: Data, Models and Simulation. \footnote{\bmale większość grafik w wykładach pochodzi z tej książki}
+\item Vissim - User Manual 
+\item Newell, G. F. (2002). A simplified car-following theory: a lower order model. 
+\item Daganzo, C. F. (1995). Requiem for second-order fluid approximations of traffic flow. 
+\item Viti, F.,  van Zuylen, H. (2004). Modeling queues at signalized intersections.
+\item Cats, O., \dots (2010). Mesoscopic simulation for transit operations. 
+\item Kesting, A., Treiber, M., Helbing, D. (2010). Enhanced intelligent driver model to access the impact of driving strategies on traffic capacity. 
+\item Gentile, G. (2010). The General Link Transmission Model for dynamic network loading and a comparison with the DUE algorithm
+\item Kucharski, R., Drabicki, A. (2017). Estimating Macroscopic Volume Delay Functions with the Traffic Density Derived from Measured Speeds and Flows. 
+\item Kucharski, R., Drabicki, A., Szarata, A. (2016). Modelowanie oporu skrzyżowań w modelach makroskopowych. Transport Miejski i Regionalny, (8), 14-19.
+\item Tiddi, D., Kostic, B., Gentile, G. (2013). Conflict Areas for Macroscopic Models in Dynamic Traffic Assignment. 
+\end{itemize}
+\end{frame}
+
 
 \subsection{Ruch i jego reprezentacja}
 
@@ -157,7 +221,7 @@ Ruch jest:
 \item złożony
 \item zmienny (losowy)
 \item ludzki, nie analityczny
-\item ale jednak jest w nim pewna regularność, którą można opisać analitycznie (fizycznie).
+\item ale jednak jest w nim pewna regularność, która można opisać analitycznie (fizycznie).
 \end{itemize}
 \end{frame}
 
