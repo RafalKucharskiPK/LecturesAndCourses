@@ -1,0 +1,108 @@
+\documentclass{beamer}
+\usefonttheme[onlymath]{serif}
+\newcommand\bmale{\fontsize{6}{7.2}\selectfont}
+\newcommand\male{\fontsize{8}{7.2}\selectfont}
+\newcommand\normalne{\fontsize{10}{7.2}\selectfont}
+\newcommand\duze{\fontsize{12}{7.2}\selectfont}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
+\mode<presentation>
+{
+  \usetheme{CambridgeUS}
+  \usecolortheme{beaver}
+}
+
+\usepackage{ulem}
+\usepackage{tabto}
+\usepackage[]{algorithm2e}
+\usepackage{bm}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+\DeclareMathOperator*{\argmin}{argmin}
+\DeclareMathOperator*{\argmax}{argmax}
+\selectlanguage{polish}
+
+\title[Efektywność Inwestycji i Systemów Transportowych] % (optional, use only with long paper titles)
+{Efektywność Inwestycji i Systemów Transportowych - wykłady}
+
+\subtitle
+{Wprowadzenie, organizacja}
+
+\author[dr inż. Rafał Kucharski] % (optional, use only with lots of authors)
+{dr inż. Rafał~Kucharski\inst{1}}
+
+\institute[] % (optional, but mostly needed)
+{
+  \inst{1}%
+  Katedra Systemów Transportowych\\
+  Politechnika Krakowska
+ }
+
+
+\date[KST, L-2, WIL, PK] % (optional, should be abbreviation of conference name)
+{Kraków, 2019}
+
+\pgfdeclareimage[height=1cm]{university-logo}{ZSK}
+ \logo{\pgfuseimage{university-logo}}
+
+\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Informacje}
+\begin{itemize}
+\item dr inż. Rafał Kucharski, rkucharski(at)pk.edu.pl;
+\item www.kst.pk.edu.pl (konsultacje, kontakt);
+\item 7 wykładów
+\item egzamin ustny 
+\item waga wykładu $35\%$ waga ćwiczeń $65\%$
+\end{itemize}
+%\tableofcontents
+%%  % You might wish to add the option [pausesections]
+\end{frame}
+
+
+\begin{frame}{Zakres}{Wykłady:}
+\begin{enumerate}
+\item Wstęp
+\item Podaż i popyt.
+\item Model czterostadiowy i jego wykorzystanie w prognozowaniu (3 wykłady)
+\item Efektywność ekonomiczna
+\item Wybór wariantu optymalnego - metody wielokryterialne.
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Przybliżenie zagadanienia}
+\begin{block}{Problem}
+Wybór odpowiedniego (spośród wielu) rozwiązania danego problemu
+\end{block}
+\end{frame}
+
+
+\begin{frame}{Przykład}
+\begin{enumerate}
+\item Droga rowerowa.
+\item Przestrzeń piesza.
+\item Uspokojenie ruchu.
+\item Linia tramwajowa.
+\item Tunel drogowy.
+\item Obwodnica.
+\item Parking.
+\end{enumerate}
+\end{frame}
+
+\end{document}
