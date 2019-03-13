@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.21)  22 NOV 2018 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.4.21)  13 MAR 2019 19:56
 entering extended mode
 **./Mobilnosc.tex
 (Mobilnosc.tex
@@ -1663,8 +1663,7 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-)
-No file Mobilnosc.aux.
+) (Mobilnosc.aux)
 \openout1 = `Mobilnosc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
@@ -1683,6 +1682,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
 LaTeX Font Info:    ... okay on input line 81.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 81.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 81.
+
 ("C:\Users\rafal\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
@@ -1773,6 +1773,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 81.
 LaTeX Info: Redefining \pageref on input line 81.
 LaTeX Info: Redefining \nameref on input line 81.
+ (Mobilnosc.out) (Mobilnosc.out)
 \@outlinefile=\write5
 \openout5 = `Mobilnosc.out'.
 
@@ -1811,8 +1812,9 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into
 your preamble.
  on input line 81.
 
-No file Mobilnosc.nav.
+(Mobilnosc.nav)
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 85.
+
 ("C:\Users\rafal\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1852,7 +1854,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/rafal/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./commons/Z
 SK.jpg>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 95.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 98.
  [2
 
 ] [3
@@ -1860,16 +1862,16 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
 ] [4
 
 ]
-<commons/cylinder.png, id=135, 415.5525pt x 335.00156pt>
+<commons/cylinder.png, id=167, 415.5525pt x 335.00156pt>
 File: commons/cylinder.png Graphic file (type png)
 
 <use commons/cylinder.png>
-Package pdftex.def Info: commons/cylinder.png used on input line 148.
+Package pdftex.def Info: commons/cylinder.png used on input line 152.
 (pdftex.def)             Requested size: 176.47115pt x 142.26378pt.
  [5
 
  <./commons/cylinder.png>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 174.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 178.
 
 
 ("C:\Users\rafal\AppData\Local\Programs\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
@@ -1902,57 +1904,57 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ] [18
 
 ]
-<commons/motywacje.png, id=503, 842.54774pt x 319.79475pt>
+<commons/motywacje.png, id=534, 842.54774pt x 319.79475pt>
 File: commons/motywacje.png Graphic file (type png)
 
 <use commons/motywacje.png>
-Package pdftex.def Info: commons/motywacje.png used on input line 205.
+Package pdftex.def Info: commons/motywacje.png used on input line 209.
 (pdftex.def)             Requested size: 337.33453pt x 128.0374pt.
  [19
 
  <./commons/motywacje.png>] [20
 
 ]
-<commons/act.png, id=562, 800.9925pt x 286.82156pt>
+<commons/act.png, id=593, 800.9925pt x 286.82156pt>
 File: commons/act.png Graphic file (type png)
  <use commons/act.png>
-Package pdftex.def Info: commons/act.png used on input line 214.
+Package pdftex.def Info: commons/act.png used on input line 218.
 (pdftex.def)             Requested size: 329.83429pt x 118.10965pt.
 
 [21
 
- <./commons/act.png>] <commons/dobowy.png, id=591, 1156.32pt x 578.16pt>
+ <./commons/act.png>] <commons/dobowy.png, id=622, 1156.32pt x 578.16pt>
 File: commons/dobowy.png Graphic file (type png)
 
 <use commons/dobowy.png>
-Package pdftex.def Info: commons/dobowy.png used on input line 222.
+Package pdftex.def Info: commons/dobowy.png used on input line 226.
 (pdftex.def)             Requested size: 381.91673pt x 190.95218pt.
 
-Overfull \hbox (34.72162pt too wide) in paragraph at lines 222--222
+Overfull \hbox (34.72162pt too wide) in paragraph at lines 226--226
  [] 
  []
 
 [22
 
- <./commons/dobowy.png>] <commons/all.png, id=620, 1156.32pt x 289.08pt>
+ <./commons/dobowy.png>] <commons/all.png, id=651, 1156.32pt x 289.08pt>
 File: commons/all.png Graphic file (type png)
 
 <use commons/all.png>
-Package pdftex.def Info: commons/all.png used on input line 230.
+Package pdftex.def Info: commons/all.png used on input line 234.
 (pdftex.def)             Requested size: 381.91673pt x 95.47609pt.
 
-Overfull \hbox (34.72162pt too wide) in paragraph at lines 230--230
+Overfull \hbox (34.72162pt too wide) in paragraph at lines 234--234
  [] 
  []
 
 [23
 
  <./commons/all.png>]
-<commons/kolorowe.png, id=649, 832.61063pt x 764.8575pt>
+<commons/kolorowe.png, id=679, 832.61063pt x 764.8575pt>
 File: commons/kolorowe.png Graphic file (type png)
 
 <use commons/kolorowe.png>
-Package pdftex.def Info: commons/kolorowe.png used on input line 238.
+Package pdftex.def Info: commons/kolorowe.png used on input line 242.
 (pdftex.def)             Requested size: 190.95836pt x 175.41167pt.
  [24
 
@@ -1964,7 +1966,7 @@ Package pdftex.def Info: commons/kolorowe.png used on input line 238.
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 284.
+(Font)              <7> on input line 288.
 
 [28
 
@@ -1989,10 +1991,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] [38
 
 ]
-<commons/8.png, id=1073, 858.20625pt x 603.75563pt>
+<commons/8.png, id=1100, 858.20625pt x 603.75563pt>
 File: commons/8.png Graphic file (type png)
  <use commons/8.png>
-Package pdftex.def Info: commons/8.png used on input line 626.
+Package pdftex.def Info: commons/8.png used on input line 631.
 (pdftex.def)             Requested size: 283.10417pt x 199.16928pt.
 
 [39
@@ -2001,49 +2003,114 @@ Package pdftex.def Info: commons/8.png used on input line 626.
 
 ] [41
 
+] [42
+
 ]
-<commons/t1.png, id=1158, 465.53925pt x 374.5995pt>
+<commons/t1.png, id=1212, 465.53925pt x 374.5995pt>
 File: commons/t1.png Graphic file (type png)
  <use commons/t1.png>
-Package pdftex.def Info: commons/t1.png used on input line 644.
+Package pdftex.def Info: commons/t1.png used on input line 669.
 (pdftex.def)             Requested size: 247.52312pt x 199.16928pt.
 
-[42
+[43
 
- <./commons/t1.png>] <commons/t2.png, id=1187, 472.164pt x 357.7365pt>
+ <./commons/t1.png>] <commons/t2.png, id=1242, 472.164pt x 357.7365pt>
 File: commons/t2.png Graphic file (type png)
 
 <use commons/t2.png>
-Package pdftex.def Info: commons/t2.png used on input line 653.
+Package pdftex.def Info: commons/t2.png used on input line 678.
 (pdftex.def)             Requested size: 262.87544pt x 199.16928pt.
- [43
+ [44
 
  <./commons/t2.png>]
-<commons/t3.png, id=1217, 464.937pt x 354.72525pt>
+<commons/t3.png, id=1271, 464.937pt x 354.72525pt>
 File: commons/t3.png Graphic file (type png)
  <use commons/t3.png>
-Package pdftex.def Info: commons/t3.png used on input line 662.
+Package pdftex.def Info: commons/t3.png used on input line 687.
 (pdftex.def)             Requested size: 261.05109pt x 199.16928pt.
 
-[44
+[45
 
- <./commons/t3.png>] <commons/t4.png, id=1246, 460.72125pt x 351.11176pt>
+ <./commons/t3.png>] <commons/t4.png, id=1300, 460.72125pt x 351.11176pt>
 File: commons/t4.png Graphic file (type png)
 
 <use commons/t4.png>
-Package pdftex.def Info: commons/t4.png used on input line 670.
+Package pdftex.def Info: commons/t4.png used on input line 695.
 (pdftex.def)             Requested size: 261.3414pt x 199.16928pt.
- [45
+ [46
 
- <./commons/t4.png>] [46
+ <./commons/t4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 706--706
+[]\T1/lmss/m/n/8 nowe zmienne ob-ja-±nia-j¡ce
+ []
 
-] [47
+
+Underfull \hbox (badness 2781) in paragraph at lines 706--706
+\T1/lmss/m/n/8 (miej-sca pracy, lud-no±¢, po-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 706--706
+[]\T1/lmss/m/n/8 wzrost liczby po-dró»y na
+ []
+
+
+Overfull \hbox (2.2586pt too wide) in paragraph at lines 706--706
+ [] 
+ []
+
+[47
 
 ] [48
 
 ] [49
 
 ] [50
+
+] [51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+]
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \k invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+
+LaTeX Warning: Command \l invalid in math mode on input line 862.
+
+[56
+
+] [57
 
 ]
 \tf@nav=\write6
@@ -2055,55 +2122,50 @@ Package pdftex.def Info: commons/t4.png used on input line 670.
 \tf@snm=\write8
 \openout8 = `Mobilnosc.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 755.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 755.
-
-(Mobilnosc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 755.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 755.
-
-
-Package rerunfilecheck Warning: File `Mobilnosc.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Mobilnosc.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  781005C318847466277DAC3521269385;337.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 869.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 869.
+ (Mobilnosc.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 869.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 869.
+Package rerunfilecheck Info: File `Mobilnosc.out' has not changed.
+(rerunfilecheck)             Checksum: 53F775ED3702AE678330DEA264F20D80;384.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 35069 strings out of 493333
- 846240 string characters out of 3130143
- 1055256 words of memory out of 3000000
- 37735 multiletter control sequences out of 15000+200000
+ 35218 strings out of 493333
+ 847527 string characters out of 3130143
+ 1056111 words of memory out of 3000000
+ 37861 multiletter control sequences out of 15000+200000
  47568 words of font info for 60 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,17n,98p,807b,5503s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 64i,17n,98p,807b,5650s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
-ps/lm/lm-rm.enc}{C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
 ps/lm/lm-mathsy.enc}{C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-mathit.enc}{C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-ec.enc}<C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmmi5.pfb><C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/lm/lmmi6.pfb><C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/lm/lmmi7.pfb><C:/Users/rafal/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/rafal/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Users/rafal/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/rafal/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/rafal/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/rafal/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/rafal/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/rafal/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Users/rafal/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Users/rafal/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
-Output written on Mobilnosc.pdf (50 pages, 2319041 bytes).
+/dvips/lm/lm-mathex.enc}{C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts
+/enc/dvips/lm/lm-rm.enc}{C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts
+/enc/dvips/lm/lm-mathit.enc}{C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/f
+onts/enc/dvips/lm/lm-ec.enc}<C:/Users/rafal/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/lm/lmex10.pfb><C:/Users/rafal/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/lm/lmmi5.pfb><C:/Users/rafal/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/lm/lmmi6.pfb><C:/Users/rafal/AppData/Local/Programs/Mi
+KTeX 2.9/fonts/type1/public/lm/lmmi7.pfb><C:/Users/rafal/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/lm/lmmi8.pfb><C:/Users/rafal/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/lm/lmr5.pfb><C:/Users/rafal/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Users/rafal/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/rafal/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Users/rafal/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmss8.pfb><C:/Users/rafal/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/rafal/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsso8.pfb><C:/Users/ra
+fal/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy6.pfb><C:/Users
+/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb><C:/Us
+ers/rafal/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/lm/lmtt8.pfb>
+Output written on Mobilnosc.pdf (57 pages, 2397638 bytes).
 PDF statistics:
- 1483 PDF objects out of 1728 (max. 8388607)
- 107 named destinations out of 1000 (max. 500000)
- 139 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1710 PDF objects out of 1728 (max. 8388607)
+ 122 named destinations out of 1000 (max. 500000)
+ 195 words of extra memory for PDF output out of 10000 (max. 10000000)
 
