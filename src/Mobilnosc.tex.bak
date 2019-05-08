@@ -843,18 +843,18 @@ B_i = C_{t,0} - C_{t,i}
 B_i = 300 pojh/h_{szczytu}
 \end{equation*}
 \begin{equation*}
-B_i = 300 pojh/h_{szczytu} \times 30 zł/h = 9000 zł
+= 300 pojh/h_{szczytu} \times 30 zł/h = 9000 zł
 \end{equation*}
 \begin{equation*}
-B_i = 300 pojh/h_{szczytu} / 10\%  = 90000 zł/dobę
-\end{equation*}
-
-\begin{equation*}
-B_i = 300 pojh/h_{szczytu} \times 300 dni/rok  = 27000000 zł/rok
+ =  9000 zł / 10\%  = 90000 zł/dobę
 \end{equation*}
 
 \begin{equation*}
-B_i = 300 pojh/h_{szczytu} \times 25 lat  = 675 mln zł/okres analizy
+ = 90000 zł/dobę \times 300 dni/rok  = 27mln  zł/rok
+\end{equation*}
+
+\begin{equation*}
+ = 27mln zł/rok \times 25 lat  = 675 mln zł/okres analizy
 \end{equation*}
 
 \end{block}
